@@ -1,0 +1,5 @@
+Place a Maildir direcly in data/src/mail and execute run.sh
+
+for testing: test.sh
+
+Why is reverse (pull) many times faster than push for the exact same data?

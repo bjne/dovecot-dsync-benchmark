@@ -1,0 +1,25 @@
+version: '3.8'
+
+x-common:
+  &common
+  build: .
+  stop_grace_period: 1s
+  restart: always
+  cap_add:
+    - NET_ADMIN
+
+services:
+  src:
+    <<: *common
+    container_name: src
+    hostname: src
+
+    volumes:
+      - ./data/src:/data
+
+  dst:
+    <<: *common
+    container_name: dst
+    hostname: dst
+    volumes:
+      - ./data/dst:/data
